@@ -1,5 +1,6 @@
 package algorithms;
 
+import graph.IDDFSVertex;
 import graph.Vertex;
 
 public class GraphFactory
@@ -33,6 +34,39 @@ public class GraphFactory
         g.addNeighbour( a );
         g.addNeighbour( h );
     
+        h.addNeighbour( g );
+        
+        return a;
+    }
+    
+    public static IDDFSVertex createGraphIDDFS(){
+        IDDFSVertex a = new IDDFSVertex("A");
+        IDDFSVertex b = new IDDFSVertex("B");
+        IDDFSVertex c = new IDDFSVertex("C");
+        IDDFSVertex d = new IDDFSVertex("D");
+        IDDFSVertex e = new IDDFSVertex("E");
+        IDDFSVertex f = new IDDFSVertex("F");
+        IDDFSVertex g = new IDDFSVertex("G");
+        IDDFSVertex h = new IDDFSVertex("H");
+        
+        a.addNeighbour( b );
+        a.addNeighbour( f );
+        a.addNeighbour( g );
+        
+        b.addNeighbour( a );
+        b.addNeighbour( c );
+        b.addNeighbour( d );
+        
+        c.addNeighbour( b );
+        
+        d.addNeighbour( b );
+        d.addNeighbour( e );
+        
+        f.addNeighbour( a );
+        
+        g.addNeighbour( a );
+        g.addNeighbour( h );
+        
         h.addNeighbour( g );
         
         return a;

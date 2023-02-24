@@ -64,7 +64,6 @@ public class MazeSolver
                 return true;
             }
             
-            
             // if everything is false => backtrack
             visited[x][y] = false;
             return false;
