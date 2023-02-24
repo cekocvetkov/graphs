@@ -1,7 +1,10 @@
 package algorithms;
 
+import graph.DijkstraNode;
 import graph.IDDFSVertex;
 import graph.Vertex;
+
+import java.util.List;
 
 public class GraphFactory
 {
@@ -70,5 +73,30 @@ public class GraphFactory
         h.addNeighbour( g );
         
         return a;
+    }
+    
+    public static List<DijkstraNode> createDijkstraGraph(){
+        DijkstraNode a = new DijkstraNode("A");
+        DijkstraNode b = new DijkstraNode("B");
+        DijkstraNode c = new DijkstraNode("C");
+        DijkstraNode d = new DijkstraNode("D");
+        DijkstraNode e = new DijkstraNode("E");
+        DijkstraNode f = new DijkstraNode("F");
+        
+        a.addNeighbour( b, 2 );
+        a.addNeighbour( c, 4 );
+        
+        b.addNeighbour( c, 3 );
+        b.addNeighbour( e, 5 );
+        b.addNeighbour( d, 1 );
+        
+        c.addNeighbour( d, 2 );
+        
+        d.addNeighbour( e, 1 );
+        d.addNeighbour( f, 4 );
+        
+        e.addNeighbour( f, 2 );
+        
+        return List.of(a,b,c,d,e,f);
     }
 }
